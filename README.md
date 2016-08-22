@@ -1,11 +1,7 @@
-# gitlab-test-suite
-GitLab test suite docker image for Gitlab
+# gitlab-node-test-suite
+GitLab test suite docker image for GitLab CI
 include:
-- ubuntu 14:04
-- ruby 2.3.1
-- nodejs
-- npm
-- phantomjs
-- wkhtmltopdf
-- imagemagick
+- node 6.3
+- support packages for electon-mocha and spectron
+
 
