@@ -9,8 +9,9 @@ RUN apt-get update &&\
   apt-get install -y libgtk-3-dev libgconf-2-4 \
     libasound2 libxtst6 libxss1 libnss3 xvfb build-essential
 
-COPY ./scripts/xvfb /etc/init.d/xvfb
+ENV DISPLAY :99
 
-RUN /etc/init.d/xvfb start
+COPY entrypoint.sh /
+RUN chmod a+x /entrypoint.sh
 
-USER node
+ENTRYPOINT ["/entrypoint.sh"]
